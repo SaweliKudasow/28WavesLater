@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cy624h4ifuquo"]
+[gd_scene load_steps=13 format=4 uid="uid://cy624h4ifuquo"]
 
 [ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://dikstq22evvbu" path="res://player.tscn" id="2_wijl4"]
@@ -33,15 +33,28 @@ sources/0 = SubResource("TileSetAtlasSource_p5pve")
 texture = ExtResource("1_c7s6e")
 0:4/animation_columns = 5
 0:4/animation_mode = 1
-0:4/animation_frame_0/duration = 0.2
-0:4/animation_frame_1/duration = 0.2
-0:4/animation_frame_2/duration = 0.2
-0:4/animation_frame_3/duration = 0.2
-0:4/animation_frame_4/duration = 1.0
+0:4/animation_frame_0/duration = 0.8
+0:4/animation_frame_1/duration = 0.8
+0:4/animation_frame_2/duration = 0.8
+0:4/animation_frame_3/duration = 0.8
+0:4/animation_frame_4/duration = 1.2
 0:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_iw27f"]
 sources/0 = SubResource("TileSetAtlasSource_urblq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw27f"]
+texture = ExtResource("1_c7s6e")
+0:5/animation_mode = 1
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/animation_frame_3/duration = 1.0
+0:5/animation_frame_4/duration = 5.0
+0:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_71pa8"]
+sources/0 = SubResource("TileSetAtlasSource_iw27f")
 
 [node name="Map" type="Node2D"]
 
@@ -62,6 +75,10 @@ tile_set = SubResource("TileSet_urblq")
 [node name="Stars" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAIAAYAAAAAAAQAAAACAAUAAAAAAAQAAAASAAMAAAAAAAQAAAAWAAcAAAAAAAQAAAAHAAoAAAAAAAQAAAAPAAkAAAAAAAQAAAAIAAIAAAAAAAQAAAANAAUAAAAAAAQAAAAXAAAAAAAAAAQAAAADAAAAAAAAAAQAAAA=")
 tile_set = SubResource("TileSet_iw27f")
+
+[node name="Stars2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAAgAAAAAAAUAAAAPAAIAAAAAAAUAAAATAAoAAAAAAAUAAAAHAAQAAAAAAAUAAAARAAYAAAAAAAUAAAAKAAkAAAAAAAUAAAABAAEAAAAAAAUAAAAWAAIAAAAAAAUAAAABAAwAAAAAAAUAAAAGAAwAAAAAAAUAAAALAAMAAAAAAAUAAAA=")
+tile_set = SubResource("TileSet_71pa8")
 
 [node name="Player" parent="." instance=ExtResource("2_wijl4")]
 visible = false
