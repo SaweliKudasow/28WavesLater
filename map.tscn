@@ -31,13 +31,13 @@ sources/0 = SubResource("TileSetAtlasSource_p5pve")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urblq"]
 texture = ExtResource("1_c7s6e")
-0:4/animation_columns = 5
 0:4/animation_mode = 1
-0:4/animation_frame_0/duration = 0.8
-0:4/animation_frame_1/duration = 0.8
-0:4/animation_frame_2/duration = 0.8
-0:4/animation_frame_3/duration = 0.8
-0:4/animation_frame_4/duration = 1.2
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/animation_frame_3/duration = 1.0
+0:4/animation_frame_4/duration = 1.0
+0:4/animation_frame_5/duration = 3.0
 0:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_iw27f"]
@@ -50,7 +50,7 @@ texture = ExtResource("1_c7s6e")
 0:5/animation_frame_1/duration = 1.0
 0:5/animation_frame_2/duration = 1.0
 0:5/animation_frame_3/duration = 1.0
-0:5/animation_frame_4/duration = 5.0
+0:5/animation_frame_4/duration = 3.0
 0:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_71pa8"]
@@ -77,7 +77,7 @@ tile_map_data = PackedByteArray("AAAIAAYAAAAAAAQAAAACAAUAAAAAAAQAAAASAAMAAAAAAAQ
 tile_set = SubResource("TileSet_iw27f")
 
 [node name="Stars2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAEAAgAAAAAAAUAAAAPAAIAAAAAAAUAAAATAAoAAAAAAAUAAAAHAAQAAAAAAAUAAAARAAYAAAAAAAUAAAAKAAkAAAAAAAUAAAABAAEAAAAAAAUAAAAWAAIAAAAAAAUAAAABAAwAAAAAAAUAAAAGAAwAAAAAAAUAAAALAAMAAAAAAAUAAAA=")
+tile_map_data = PackedByteArray("AAAPAAIAAAAAAAUAAAATAAoAAAAAAAUAAAAHAAQAAAAAAAUAAAARAAYAAAAAAAUAAAAKAAkAAAAAAAUAAAABAAEAAAAAAAUAAAAWAAIAAAAAAAUAAAABAAwAAAAAAAUAAAAGAAwAAAAAAAUAAAALAAMAAAAAAAUAAAAFAAYAAAAAAAUAAAA=")
 tile_set = SubResource("TileSet_71pa8")
 
 [node name="Player" parent="." instance=ExtResource("2_wijl4")]
