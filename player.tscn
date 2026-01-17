@@ -1,24 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://dikstq22evvbu"]
+[gd_scene load_steps=9 format=3 uid="uid://dikstq22evvbu"]
 
 [ext_resource type="Script" uid="uid://n76j17fhyukt" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="2_i3pqv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("2_i3pqv")
-region = Rect2(64, 0, 16, 16)
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(16, 10)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_onrkg")
-speed = 100.0
-jump_force = 200.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="OnShootAnim" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, 0)
-texture = SubResource("AtlasTexture_hqtel")
+sprite_frames = SubResource("SpriteFrames_1jxqw")
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_sweqy")
+
+[connection signal="animation_finished" from="OnShootAnim" to="." method="_on_shoot_animation_finished"]

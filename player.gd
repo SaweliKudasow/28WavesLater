@@ -3,10 +3,13 @@ extends CharacterBody2D
 var max_speed = 100   # максимальная скорость
 var acceleration = 80 # насколько быстро разгоняемся
 var friction = 20     # насколько быстро тормозим
+@onready var anim = $OnShootAnim
+var bullet = preload("res://bullet.tscn")
 
 func _physics_process(delta):
+	# движение
 	var direction = Vector2.ZERO
-
+	
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -28,3 +31,35 @@ func _physics_process(delta):
 	var mouse_pos = get_global_mouse_position()
 	look_at(mouse_pos)
 	rotation += PI     # разворачиваем, левой стороной
+	
+	# если лкм зажата & анимация не играет
+	if Input.is_action_pressed("shoot") and not anim.is_playing():
+		anim.play("attack") # запуск анимации выстрела
+		shoot()             # выстрел пули
+	
+	# экранный перенос
+	var screen_size = get_viewport_rect().size
+	var center = screen_size / 2
+	
+	if position.x < 0 or position.x > screen_size.x or position.y < 0 or position.y > screen_size.y:
+		position = center + (center - position)
+
+func _on_shoot_animation_finished():
+	anim.stop()
+	anim.frame = 0
+
+func shoot():
+	# добавляем пулю на сцену
+	var bullet_instance = bullet.instantiate()
+	get_parent().add_child(bullet_instance)
+	
+	# ставим пулю в позицию игрока
+	bullet_instance.global_position = global_position
+	
+	# направление к мыши
+	var mouse_pos = get_global_mouse_position()
+	var dir = (mouse_pos - global_position).normalized()
+	
+	# поворачиваем пулю левой стороной
+	bullet_instance.direction = dir
+	bullet_instance.rotation = dir.angle() + PI
