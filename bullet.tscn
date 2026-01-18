@@ -1,7 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cni1i3e28fpra"]
+[gd_scene load_steps=7 format=3 uid="uid://cni1i3e28fpra"]
 
 [ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://c25e17r37au3k" path="res://bullet.gd" id="1_v8qja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4vbm"]
+atlas = ExtResource("1_v7oki")
+region = Rect2(80, 32, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v8qja"]
+emission_shape = 3
+emission_box_extents = Vector3(3, 3, 0)
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 1, 0.24313726)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8qja"]
 atlas = ExtResource("1_v7oki")
@@ -15,6 +25,12 @@ z_index = -1
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_v8qja")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 16
+texture = SubResource("AtlasTexture_t4vbm")
+speed_scale = 5.0
+process_material = SubResource("ParticleProcessMaterial_v8qja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_v8qja")
