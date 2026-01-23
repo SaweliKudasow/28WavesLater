@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgrawfrvluh8e"]
+
+[ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="1_kxhmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7dvk"]
+atlas = ExtResource("1_kxhmu")
+region = Rect2(96, 72, 25, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juc2q"]
+atlas = ExtResource("1_kxhmu")
+region = Rect2(96, 64, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jl8t"]
+atlas = ExtResource("1_kxhmu")
+region = Rect2(104, 64, 7, 6)
+
+[node name="UserInterface" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hearts" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.5
+offset_right = 12.5
+offset_bottom = 8.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_i7dvk")
+stretch_mode = 2
+
+[node name="BrokenHeart1" type="TextureRect" parent="Control/Hearts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -11.5
+offset_top = 1.0
+offset_right = -4.5
+offset_bottom = 7.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_juc2q")
+stretch_mode = 2
+
+[node name="BrokenHeart2" type="TextureRect" parent="Control/Hearts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -3.5
+offset_top = 1.0
+offset_right = 3.5
+offset_bottom = 7.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_juc2q")
+stretch_mode = 2
+
+[node name="BrokenHeart3" type="TextureRect" parent="Control/Hearts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 4.5
+offset_top = 1.0
+offset_right = 11.5
+offset_bottom = 7.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_juc2q")
+stretch_mode = 2
+
+[node name="Heart1" type="TextureRect" parent="Control/Hearts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -11.5
+offset_top = 1.0
+offset_right = -4.5
+offset_bottom = 7.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_0jl8t")
+stretch_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="Control/Hearts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -3.5
+offset_top = 1.0
+offset_right = 3.5
+offset_bottom = 7.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_0jl8t")
+stretch_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="Control/Hearts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 4.5
+offset_top = 1.0
+offset_right = 11.5
+offset_bottom = 7.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_0jl8t")
+stretch_mode = 2
