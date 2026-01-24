@@ -26,13 +26,8 @@ grow_vertical = 2
 
 [node name="Hearts" type="TextureRect" parent="Control"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -12.5
-offset_right = 12.5
+offset_right = 25.0
 offset_bottom = 8.0
-grow_horizontal = 2
 texture = SubResource("AtlasTexture_i7dvk")
 stretch_mode = 2
 
