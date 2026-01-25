@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv3ixxkgdqw33"]
+
+[ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="1_hdmo1"]
+[ext_resource type="FontFile" uid="uid://83looctp14y5" path="res://Fonts/Jersey10-Regular.ttf" id="2_nwcfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwcfo"]
+atlas = ExtResource("1_hdmo1")
+region = Rect2(0, 98, 32, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05uyy"]
+atlas = ExtResource("1_hdmo1")
+region = Rect2(0, 98, 32, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p81d2"]
+atlas = ExtResource("1_hdmo1")
+region = Rect2(0, 114, 32, 11)
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_nwcfo")
+texture_pressed = SubResource("AtlasTexture_05uyy")
+texture_hover = SubResource("AtlasTexture_p81d2")
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureButton"]
+layout_mode = 0
+offset_left = 5.333334
+offset_top = 1.3333335
+offset_right = 27.333334
+offset_bottom = 19.333334
+theme_override_fonts/font = ExtResource("2_nwcfo")
+theme_override_font_sizes/font_size = 8
+text = "Play"
+horizontal_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_nwcfo")
+texture_pressed = SubResource("AtlasTexture_05uyy")
+texture_hover = SubResource("AtlasTexture_p81d2")
