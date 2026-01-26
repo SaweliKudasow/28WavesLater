@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgrawfrvluh8e"]
+[gd_scene format=3 uid="uid://cgrawfrvluh8e"]
 
 [ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="1_kxhmu"]
+[ext_resource type="PackedScene" uid="uid://bv3ixxkgdqw33" path="res://pause_menu.tscn" id="2_i7dvk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7dvk"]
 atlas = ExtResource("1_kxhmu")
@@ -14,9 +15,9 @@ region = Rect2(96, 64, 7, 6)
 atlas = ExtResource("1_kxhmu")
 region = Rect2(104, 64, 7, 6)
 
-[node name="UserInterface" type="CanvasLayer"]
+[node name="UserInterface" type="CanvasLayer" unique_id=1212929414]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1697236624]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,14 +25,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Hearts" type="TextureRect" parent="Control"]
+[node name="Hearts" type="TextureRect" parent="Control" unique_id=1919112539]
 layout_mode = 1
 offset_right = 25.0
 offset_bottom = 8.0
 texture = SubResource("AtlasTexture_i7dvk")
 stretch_mode = 2
 
-[node name="BrokenHeart1" type="TextureRect" parent="Control/Hearts"]
+[node name="BrokenHeart1" type="TextureRect" parent="Control/Hearts" unique_id=1843218063]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -44,7 +45,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_juc2q")
 stretch_mode = 2
 
-[node name="BrokenHeart2" type="TextureRect" parent="Control/Hearts"]
+[node name="BrokenHeart2" type="TextureRect" parent="Control/Hearts" unique_id=600364080]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -57,7 +58,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_juc2q")
 stretch_mode = 2
 
-[node name="BrokenHeart3" type="TextureRect" parent="Control/Hearts"]
+[node name="BrokenHeart3" type="TextureRect" parent="Control/Hearts" unique_id=728407553]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -70,7 +71,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_juc2q")
 stretch_mode = 2
 
-[node name="Heart1" type="TextureRect" parent="Control/Hearts"]
+[node name="Heart1" type="TextureRect" parent="Control/Hearts" unique_id=2070544689]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -83,7 +84,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_0jl8t")
 stretch_mode = 2
 
-[node name="Heart2" type="TextureRect" parent="Control/Hearts"]
+[node name="Heart2" type="TextureRect" parent="Control/Hearts" unique_id=1492578536]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -96,7 +97,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_0jl8t")
 stretch_mode = 2
 
-[node name="Heart3" type="TextureRect" parent="Control/Hearts"]
+[node name="Heart3" type="TextureRect" parent="Control/Hearts" unique_id=1422995069]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -108,3 +109,6 @@ offset_bottom = 7.0
 grow_horizontal = 2
 texture = SubResource("AtlasTexture_0jl8t")
 stretch_mode = 2
+
+[node name="PauseMenu" parent="." unique_id=1202204698 instance=ExtResource("2_i7dvk")]
+visible = false
