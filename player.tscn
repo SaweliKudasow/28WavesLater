@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dikstq22evvbu"]
+[gd_scene format=3 uid="uid://dikstq22evvbu"]
 
 [ext_resource type="Script" uid="uid://n76j17fhyukt" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cnsrogrkidx8l" path="res://SpriteSheet.png" id="2_i3pqv"]
@@ -85,21 +85,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1645686645]
+z_index = -1
 collision_mask = 0
 script = ExtResource("1_onrkg")
 
-[node name="OnShootAnim" type="AnimatedSprite2D" parent="."]
+[node name="OnShootAnim" type="AnimatedSprite2D" parent="." unique_id=1402348367]
 visible = false
 position = Vector2(-3, 0)
 sprite_frames = SubResource("SpriteFrames_1jxqw")
 animation = &"attack"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1680085802]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_sweqy")
 
-[node name="OnAppearAnim" type="AnimatedSprite2D" parent="."]
+[node name="OnAppearAnim" type="AnimatedSprite2D" parent="." unique_id=1499566169]
 position = Vector2(-3, 0)
 sprite_frames = SubResource("SpriteFrames_nvl01")
 animation = &"appear"
